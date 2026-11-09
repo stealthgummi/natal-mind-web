@@ -1,0 +1,10 @@
+{
+  "name": "the-natal-mind-web",
+  "version": "1.0.0",
+  "description": "ShaktiNoelle Sales Portal, 11:11 Quantum Leap Suite & Mobile Flashcards",
+  "private": true,
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
+

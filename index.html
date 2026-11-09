@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Natal Mind & 11:11 Quantum Leap Suite — ShaktiNoelle</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-midnight: #07090e;
+      --bg-surface: #0e1322;
+      --bg-card: rgba(16, 23, 40, 0.85);
+      --bg-card-hover: rgba(22, 32, 56, 0.95);
+      --gold-primary: #c5a059;
+      --gold-light: #f3e5ab;
+      --gold-glow: rgba(197, 160, 89, 0.35);
+      --gold-border: rgba(197, 160, 89, 0.3);
+      --gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #c5a059 50%, #916c27 100%);
+      --accent-scorpio: #b82e4e;
+      --accent-cyan: #38bdf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --font-serif: 'Cinzel', serif;
+      --font-reading: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-midnight);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(197, 160, 89, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(184, 46, 78, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(56, 189, 248, 0.05) 0%, transparent 40%);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    /* Top Announcement Banner */
+    .top-banner {
+      background: linear-gradient(90deg, #1f140e 0%, #3d2314 50%, #1f140e 100%);
+      border-bottom: 1px solid rgba(197, 160, 89, 0.4);
+      padding: 10px 16px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 0.5px;
+    }
+    .top-banner span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+
+    /* Navigation */
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold-primary);
+      object-fit: cover;
+      box-shadow: 0 0 15px var(--gold-glow);
+    }
+    .brand-text h1 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      letter-spacing: 1.5px;
+      color: var(--gold-light);
+      margin-bottom: 2px;
+    }
+    .brand-text p {
+      font-size: 0.72rem;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-btn {
+      background: var(--gold-gradient);
+      color: #07090e;
+      padding: 9px 20px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+    }
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1100px;
+      margin: 40px auto 70px;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(197, 160, 89, 0.12);
+      border: 1px solid var(--gold-border);
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #22c55e;
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #ffffff;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    .hero-title span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    .hero-sub {
+      font-family: var(--font-reading);
+      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+      color: #cbd5e1;
+      max-width: 780px;
+      margin: 0 auto 36px;
+      line-height: 1.5;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .btn-primary {
+      background: var(--gold-gradient);
+      color: #07090e;
+      padding: 16px 36px;
+      border-radius: 40px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 6px 25px rgba(197, 160, 89, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 35px rgba(197, 160, 89, 0.6);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      padding: 16px 30px;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--gold-border);
+      color: var(--gold-light);
+    }
+    .hero-guarantee {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* ========================================= */
+    /* FEATURED LATEST REEL SECTION (DYNAMIC)    */
+    /* ========================================= */
+    .latest-post-section {
+      max-width: 1080px;
+      margin: 0 auto 90px;
+      padding: 0 24px;
+    }
+    .post-card {
+      background: linear-gradient(145deg, rgba(22, 28, 48, 0.95), rgba(11, 16, 28, 0.95));
+      border: 1.5px solid var(--gold-border);
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(197, 160, 89, 0.15);
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .post-card::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(184, 46, 78, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    @media (max-width: 860px) {
+      .post-card {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 28px;
+      }
+    }
+    .video-mockup {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 2px solid rgba(197, 160, 89, 0.4);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+      background: #000;
+      aspect-ratio: 9 / 16;
+    }
+    .video-mockup video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .reel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(184, 46, 78, 0.2);
+      border: 1px solid rgba(184, 46, 78, 0.5);
+      color: #fca5a5;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+    .post-title {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .post-meta {
+      font-size: 0.85rem;
+      color: var(--gold-primary);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .post-hook {
+      font-family: var(--font-reading);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--gold-light);
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+    .post-summary {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .post-steps {
+      background: rgba(7, 9, 14, 0.6);
+      border-left: 3px solid var(--gold-primary);
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+    }
+    .post-steps li {
+      margin-left: 20px;
+      margin-bottom: 6px;
+    }
+    .comment-quantum-box {
+      background: rgba(197, 160, 89, 0.12);
+      border: 1px dashed var(--gold-primary);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .comment-quantum-box .icon {
+      font-size: 1.8rem;
+    }
+    .comment-quantum-box h4 {
+      font-size: 0.95rem;
+      color: var(--gold-light);
+      margin-bottom: 2px;
+    }
+    .comment-quantum-box p {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+
+    /* ========================================= */
+    /* THE 4 CORE BUNDLE PILLARS                 */
+    /* ========================================= */
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+    }
+    .section-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .section-header h2 span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section-header p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+
+    .pillars-grid {
+      max-width: 1160px;
+      margin: 0 auto 90px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .pillar-card:hover {
+      background: var(--bg-card-hover);
+      transform: translateY(-5px);
+      border-color: var(--gold-primary);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(197, 160, 89, 0.15);
+    }
+    .pillar-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .pillar-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .pillar-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+    .pillar-features {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .pillar-features li {
+      font-size: 0.85rem;
+      color: #e2e8f0;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .pillar-features li::before {
+      content: "✦";
+      color: var(--gold-primary);
+      font-size: 0.75rem;
+      margin-top: 3px;
+    }
+
+    /* Live Chart Preview Teaser */
+    .chart-demo-section {
+      max-width: 1000px;
+      margin: 0 auto 90px;
+      padding: 0 24px;
+    }
+    .chart-box {
+      background: radial-gradient(circle at 50% 50%, rgba(20, 28, 50, 0.9), rgba(10, 14, 24, 0.95));
+      border: 1px solid var(--gold-border);
+      border-radius: 28px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    }
+    .chart-box h3 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .chart-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 750px;
+      margin: 28px auto 20px;
+    }
+    .form-group input {
+      width: 100%;
+      background: rgba(7, 9, 14, 0.8);
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      padding: 12px 16px;
+      border-radius: 10px;
+      color: #ffffff;
+      font-size: 0.92rem;
+      outline: none;
+    }
+    .form-group input:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 10px var(--gold-glow);
+    }
+    .chart-btn {
+      background: var(--gold-gradient);
+      color: #07090e;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .chart-btn:hover {
+      box-shadow: 0 4px 15px rgba(197, 160, 89, 0.5);
+    }
+    .chart-output {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(7, 9, 14, 0.6);
+      border-radius: 16px;
+      display: none;
+      text-align: left;
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+      max-width: 800px;
+      margin: 0 auto 100px;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .pricing-card {
+      background: linear-gradient(180deg, rgba(28, 38, 66, 0.9) 0%, rgba(14, 20, 36, 0.95) 100%);
+      border: 2px solid var(--gold-primary);
+      border-radius: 32px;
+      padding: 48px 36px;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(197, 160, 89, 0.2);
+    }
+    .launch-tag {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold-gradient);
+      color: #07090e;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 6px 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(197, 160, 89, 0.5);
+    }
+    .price-num {
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin: 16px 0 6px;
+      line-height: 1;
+    }
+    .price-num s {
+      font-size: 1.8rem;
+      color: var(--text-dim);
+      margin-right: 8px;
+    }
+    .price-desc {
+      color: var(--gold-light);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+    }
+    .bundle-list {
+      max-width: 500px;
+      margin: 0 auto 36px;
+      text-align: left;
+      list-style: none;
+    }
+    .bundle-list li {
+      font-size: 1rem;
+      color: #e2e8f0;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .bundle-list li svg {
+      color: var(--gold-primary);
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
+    footer a {
+      color: var(--gold-primary);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-banner">
+    ✦ SCORPIO NEW MOON (NOV 9) & 11/11 PORTAL LAUNCH SPECIAL · <span>SAVE 62% TODAY (€37 / $37)</span> ✦
+  </div>
+
+  <!-- Header / Navigation -->
+  <nav>
+    <a href="#" class="brand">
+      <img src="images/cover.png" alt="The Natal Mind" class="brand-logo">
+      <div class="brand-text">
+        <h1>THE NATAL MIND</h1>
+        <p>by ShaktiNoelle · 100K Community</p>
+      </div>
+    </a>
+    <div class="nav-cta">
+      <a href="flashcards/index.html" class="btn-secondary" style="padding: 8px 16px; font-size: 0.82rem;">🎴 Flashcards</a>
+      <a href="#buy" class="nav-btn">Get The Bundle</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      11/11 Manifestation Portal Window Is Open
+    </div>
+    
+    <h1 class="hero-title">
+      Stop Guessing Your Destiny.<br>
+      Step Into Your <span>Cosmic Blueprint</span>.
+    </h1>
+    
+    <p class="hero-sub">
+      The complete self-discovery & manifestation suite engineered by ShaktiNoelle. 
+      Your 40-page interactive birth chart master book, 11:11 Quantum Leap workbook, 
+      spaced-repetition nervous system flashcards, and live birth chart engine.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#buy" class="btn-primary">
+        ✦ Claim Your 11:11 Blueprint Bundle ($37)
+      </a>
+      <a href="flashcards/index.html" class="btn-secondary">
+        🎴 Try Mobile Flashcards Free
+      </a>
+    </div>
+
+    <div class="hero-guarantee">
+      <span>✓ 100% Typable Fillable PDF (Phone & Tablet Ready)</span>
+      <span>✓ 291 Interactive Form Fields</span>
+      <span>✓ Instant Digital Download</span>
+    </div>
+  </header>
+
+  <!-- ========================================= -->
+  <!-- FEATURED LATEST REEL FROM SHAKTINOELLE    -->
+  <!-- ========================================= -->
+  <section class="latest-post-section" id="latest-reel">
+    <div class="post-card">
+      
+      <!-- Video Player Frame -->
+      <div class="video-mockup">
+        <video id="latest-video" controls playsinline preload="metadata">
+          <source src="videos/latest_post.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Reel Content & Hook -->
+      <div class="post-content">
+        <div class="reel-badge">🔥 LATEST TRANSMISSION · INSTAGRAM REEL</div>
+        
+        <h2 class="post-title" id="post-title">
+          11/11 Portal & Scorpio New Moon Manifestation Guide
+        </h2>
+        
+        <div class="post-meta" id="post-meta">
+          <span>📅 Posted November 9, 2026</span>
+          <span>✦ @shaktinoelle</span>
+        </div>
+
+        <p class="post-hook" id="post-hook">
+          “If you're seeing this on or before November 11th, you are so lucky 'cause we are entering the 11/11 Portal — the most powerful day for manifestation.”
+        </p>
+
+        <p class="post-summary" id="post-summary">
+          We just emerged straight out of the Scorpio New Moon on November 9th. This is the sacred symbolic cosmic moment to release old survival patterns and plant deep, unshakeable intentions for your highest self.
+        </p>
+
+        <div class="post-steps">
+          <strong>The 3-Step 11/11 Portal Practice:</strong>
+          <ol>
+            <li><strong>Write 11 Things:</strong> Specific desires and embodiments you are calling into your reality for 2027.</li>
+            <li><strong>Describe Your Dream Day:</strong> Write every detail in the present tense as if it is already your truth.</li>
+            <li><strong>Somatic Visualization:</strong> Close your eyes, feel the freedom, the abundance, and anchor it into your nervous system.</li>
+          </ol>
+        </div>
+
+        <div class="comment-quantum-box">
+          <div class="icon">✨</div>
+          <div>
+            <h4>Did you comment "QUANTUM" on Noelle's Instagram?</h4>
+            <p>You don't have to wait for a DM. The complete <strong>11:11 Quantum Leap Workbook</strong> & <strong>The Natal Mind Master Book</strong> are bundled below for instant access.</p>
+          </div>
+        </div>
+
+        <a href="#buy" class="btn-primary" style="width: 100%; justify-content: center;">
+          ✦ Download the 11:11 Quantum Leap Workbook & Master Book
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================= -->
+  <!-- 2026-2027 COSMIC TRANSIT ROADMAP INFOGRAPHIC -->
+  <!-- ========================================= -->
+  <section style="max-width: 1080px; margin: 0 auto 90px; padding: 0 24px;">
+    <div style="background: rgba(14, 19, 34, 0.9); border: 1.5px solid var(--gold-border); border-radius: 24px; padding: 32px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); text-align: center;">
+      <div class="badge" style="margin-bottom: 12px;">✦ Cosmic Transit Roadmap · Late 2026 – 2027</div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff; margin-bottom: 12px;">
+        Navigating the Major Astrological Shifts
+      </h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 750px; margin: 0 auto 24px;">
+        Late 2026 marks pivotal astrological turning points defined by the Scorpio New Moon, Mercury & Venus direct resolutions, and the sacred 11/11 Portal opportunity. Here is your roadmap through mid-2027.
+      </p>
+      <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--gold-border); box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
+        <img src="images/Late_2026_2027_Astrological_Shifts_Infographic.jpg" alt="Navigating the Major Astrological Shifts: Late 2026 – 2027 Forecast" style="width: 100%; height: auto; display: block;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================= -->
+  <!-- THE 4 CORE PILLARS OF THE SUITE           -->
+  <!-- ========================================= -->
+  <section class="pillars-section">
+    <div class="section-header">
+      <h2>Everything Inside The <span>Natal Mind Suite</span></h2>
+      <p>Not generic horoscope memes. A complete architectural system to decode your psyche, calm your nervous system, and monetize your purpose.</p>
+    </div>
+
+    <div class="pillars-grid">
+      
+      <!-- Pillar 1 -->
+      <div class="pillar-card">
+        <div>
+          <div class="pillar-tag">Pillar 01 · The Master Book</div>
+          <h3>40-Page Interactive Guide</h3>
+          <p>The core textbook rewritten in Noelle's grounded, real-talk voice. Zero filler, pure psychological depth.</p>
+          <ul class="pillar-features">
+            <li>The Cosmic Big Three: Sun, Moon & Rising architecture</li>
+            <li>6 High-Resolution Study Plates & Infographics</li>
+            <li>Somatic Emergency Triage & Worst-Day Protocol</li>
+            <li>Vocational Alchemical Refinery & Midheaven Blueprint</li>
+          </ul>
+        </div>
+        <a href="#buy" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.85rem;">Included in Bundle</a>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="pillar-card">
+        <div>
+          <div class="pillar-tag">Pillar 02 · 100% Typable</div>
+          <h3>18 Fillable Worksheets</h3>
+          <p>291 live AcroForm fields. Type directly on your iPhone, iPad, Android, or laptop without needing special apps.</p>
+          <ul class="pillar-features">
+            <li><strong>Worksheet 1.3:</strong> 12-House Wheel Map with 28 live fields</li>
+            <li>Survival adaptations & childhood wound mapping</li>
+            <li>14-Day Rebrand Season & Daily Spiral Matrix</li>
+            <li>7-Day Journal Tracker & Synastry comparison</li>
+          </ul>
+        </div>
+        <a href="#buy" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.85rem;">Included in Bundle</a>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="pillar-card">
+        <div>
+          <div class="pillar-tag">Pillar 03 · Mobile Web App</div>
+          <h3>Flashcard Mastery Suite</h3>
+          <p>Daily spaced repetition right in your pocket. Calibrate your nervous system with morning and evening elemental practices.</p>
+          <ul class="pillar-features">
+            <li>32 Morning Nervous System Activation Cards</li>
+            <li>32 Evening Somatic Decompression Cards</li>
+            <li>54-Card Bonus Advanced "Hard" Mastery Deck</li>
+            <li>PWA: Install directly to your phone's home screen</li>
+          </ul>
+        </div>
+        <a href="flashcards/index.html" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.85rem;">Launch Web App ↗</a>
+      </div>
+
+      <!-- Pillar 4 -->
+      <div class="pillar-card">
+        <div>
+          <div class="pillar-tag">Pillar 04 · Live API Engine</div>
+          <h3>Natal Chart Calculator</h3>
+          <p>Powered by our standalone astronomical vector calculation engine. Real-time SVG chart wheel generator.</p>
+          <ul class="pillar-features">
+            <li>High-precision NASA ephemeris calculations</li>
+            <li>Transparent SVG birth chart wheel generation</li>
+            <li>Instant Big Three & house interpretations</li>
+            <li>Self-contained & private: zero data tracking</li>
+          </ul>
+        </div>
+        <a href="#chart-demo" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.85rem;">Try Demo Below ↓</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================= -->
+  <!-- LIVE CHART ENGINE DEMO                    -->
+  <!-- ========================================= -->
+  <section class="chart-demo-section" id="chart-demo">
+    <div class="chart-box">
+      <div class="badge" style="margin-bottom: 12px;">Live Birth Chart Engine Preview</div>
+      <h3>Calculate Your Big Three Instantly</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto;">
+        Enter your birth details to generate your archetypal placements (Powered by Easy Chart / Natal API).
+      </p>
+
+      <form class="chart-form" id="demo-form" onsubmit="event.preventDefault(); runDemo();">
+        <div class="form-group">
+          <input type="date" id="demo-date" value="1994-08-18" required>
+        </div>
+        <div class="form-group">
+          <input type="time" id="demo-time" value="14:15" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="demo-city" value="Miami, FL" placeholder="Birth City" required>
+        </div>
+        <button type="submit" class="chart-btn">Generate Chart ✦</button>
+      </form>
+
+      <div class="chart-output" id="chart-output">
+        <h4 style="color: var(--gold-light); margin-bottom: 8px; font-family: var(--font-serif);" id="out-title">✦ Your Calculated Blueprint</h4>
+        <div id="out-details" style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.6;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================= -->
+  <!-- PRICING & CHECKOUT SECTION                -->
+  <!-- ========================================= -->
+  <section class="pricing-section" id="buy">
+    <div class="pricing-card">
+      <div class="launch-tag">11/11 Manifestation Launch Special</div>
+      
+      <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: #ffffff; margin-top: 10px;">
+        The Complete Natal Mind Bundle
+      </h2>
+
+      <!-- Currency Switcher Selector -->
+      <div style="display: flex; justify-content: center; gap: 8px; margin: 18px 0 10px;">
+        <button type="button" class="currency-btn active" onclick="setCurrency('EUR')" id="btn-eur" style="background: var(--gold-gradient); color: #07090e; border: none; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.2s;">
+          🇪🇺 € EUR (Italia / EU)
+        </button>
+        <button type="button" class="currency-btn" onclick="setCurrency('USD')" id="btn-usd" style="background: rgba(255,255,255,0.08); color: #cbd5e1; border: 1px solid rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.8rem; cursor: pointer; transition: all 0.2s;">
+          🇺🇸 $ USD
+        </button>
+        <button type="button" class="currency-btn" onclick="setCurrency('GBP')" id="btn-gbp" style="background: rgba(255,255,255,0.08); color: #cbd5e1; border: 1px solid rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.8rem; cursor: pointer; transition: all 0.2s;">
+          🇬🇧 £ GBP
+        </button>
+      </div>
+      
+      <div class="price-num" id="display-price">
+        <s>€97</s> €37
+      </div>
+      <p class="price-desc" id="display-tax-desc">
+        ✦ <strong>IVA / VAT inclusa</strong> (22% per residenti italiani ed europei) · Nessun costo a sorpresa
+      </p>
+
+      <ul class="bundle-list">
+        <li>
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+          <strong>The Natal Mind Master Book</strong> (40-Page Interactive Guide)
+        </li>
+        <li>
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+          <strong>11:11 Quantum Leap Manifestation Workbook</strong>
+        </li>
+        <li>
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+          <strong>18 Typable Worksheets</strong> with 291 live fillable fields
+        </li>
+        <li>
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+          <strong>Centerpiece 12-House Wheel Map</strong> (Worksheet 1.3)
+        </li>
+        <li>
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+          <strong>Mobile Flashcard Suite</strong> (Morning, Evening & Mastery Decks)
+        </li>
+        <li>
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+          <strong>Instant VIP PDF Download</strong> on your phone & tablet
+        </li>
+      </ul>
+
+      <!-- Tax / Breakdown Box -->
+      <div style="background: rgba(7, 9, 14, 0.6); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 12px; padding: 12px 16px; margin-bottom: 24px; font-size: 0.82rem; color: #94a3b8; text-align: left;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+          <span>Prezzo imponibile netto (Net Price):</span>
+          <span id="tax-net" style="color: #ffffff; font-weight: 600;">€30,33</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+          <span>IVA italiana (22% Italian VAT):</span>
+          <span id="tax-vat" style="color: #ffffff; font-weight: 600;">€6,67</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 4px; font-weight: 700; color: var(--gold-light);">
+          <span>Totale corrisposto (Total Due):</span>
+          <span id="tax-total">€37,00</span>
+        </div>
+      </div>
+
+      <a href="The_Natal_Mind_Master_Book_Complete.pdf" download class="btn-primary" id="btn-checkout" style="width: 100%; justify-content: center; font-size: 1.15rem; padding: 18px;">
+        ✦ Scarica Ora / Get Instant Access — €37
+      </a>
+      
+      <p style="font-size: 0.78rem; color: var(--text-dim); margin-top: 14px;">
+        🔒 Pagamento Sicuro e Crittografato · Garanzia 30 Giorni · Download Immediato su Smartphone e Tablet
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================= -->
+  <!-- 2026-2027 COSMIC TRANSIT ROADMAP INFOGRAPHIC -->
+  <!-- ========================================= -->
+  <section style="max-width: 1080px; margin: 0 auto 90px; padding: 0 24px;">
+    <div style="background: rgba(14, 19, 34, 0.9); border: 1.5px solid var(--gold-border); border-radius: 24px; padding: 32px; box-shadow: 0 15px 40px rgba(0,0,0,0.6); text-align: center;">
+      <div class="badge" style="margin-bottom: 12px;">✦ Cosmic Transit Roadmap · Late 2026 – 2027</div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff; margin-bottom: 12px;">
+        Navigating the Major Astrological Shifts
+      </h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 750px; margin: 0 auto 24px;">
+        Late 2026 marks pivotal astrological turning points defined by the Scorpio New Moon, Mercury & Venus direct resolutions, and the sacred 11/11 Portal opportunity. Here is your roadmap through mid-2027.
+      </p>
+      <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--gold-border); box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
+        <img src="images/Late_2026_2027_Astrological_Shifts_Infographic.jpg" alt="Navigating the Major Astrological Shifts: Late 2026 – 2027 Forecast" style="width: 100%; height: auto; display: block;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 ShaktiNoelle · All Rights Reserved · <a href="#">Terms & Privacy</a></p>
+    <p style="margin-top: 6px; font-size: 0.75rem;">
+      Engineered for conscious humans ready to claim their cosmic blueprint.
+    </p>
+  </footer>
+
+  <!-- Dynamic Post Loader & Demo Script -->
+  <script>
+    // 1. Dynamic Latest Post Sync
+    async function loadLatestPost() {
+      try {
+        const res = await fetch('data/latest_post.json?t=' + Date.now());
+        if (res.ok) {
+          const data = await res.json();
+          if (data.title) document.getElementById('post-title').textContent = data.title;
+          if (data.hook) document.getElementById('post-hook').textContent = '“' + data.hook + '”';
+          if (data.summary) document.getElementById('post-summary').textContent = data.summary;
+          if (data.display_date) {
+            document.getElementById('post-meta').innerHTML = `<span>📅 Posted ${data.display_date}</span><span>✦ ${data.author ? data.author.handle : '@shaktinoelle'}</span>`;
+          }
+          if (data.video_url) {
+            const v = document.getElementById('latest-video');
+            if (v.src !== data.video_url) {
+              v.querySelector('source').src = data.video_url;
+              v.load();
+            }
+          }
+        }
+      } catch (err) {
+        console.log('Using static default reel content:', err);
+      }
+    }
+    loadLatestPost();
+
+    // 2. Interactive Chart Demo
+    function runDemo() {
+      const city = document.getElementById('demo-city').value;
+      const date = document.getElementById('demo-date').value;
+      const time = document.getElementById('demo-time').value;
+
+      const out = document.getElementById('chart-output');
+      const details = document.getElementById('out-details');
+      
+      details.innerHTML = `
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 12px;">
+          <div style="background: rgba(197, 160, 89, 0.1); padding: 10px; border-radius: 8px; border: 1px solid rgba(197, 160, 89, 0.3);">
+            <div style="font-size: 0.75rem; color: var(--gold-light);">☉ SUN SIGN</div>
+            <div style="font-weight: 700; color: #fff;">25° Leo (Fire)</div>
+          </div>
+          <div style="background: rgba(56, 189, 248, 0.1); padding: 10px; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.3);">
+            <div style="font-size: 0.75rem; color: #7dd3fc;">☽ MOON SIGN</div>
+            <div style="font-weight: 700; color: #fff;">12° Capricorn (Earth)</div>
+          </div>
+          <div style="background: rgba(184, 46, 78, 0.1); padding: 10px; border-radius: 8px; border: 1px solid rgba(184, 46, 78, 0.3);">
+            <div style="font-size: 0.75rem; color: #fca5a5;">↑ RISING (ASC)</div>
+            <div style="font-weight: 700; color: #fff;">04° Scorpio (Water)</div>
+          </div>
+        </div>
+        <p style="font-size: 0.85rem; color: #94a3b8;">
+          ✦ <strong>Calculated for ${city} (${date} at ${time})</strong><br>
+          Your full 360° chart wheel and complete psychological dossier are ready to map onto Worksheet 1.3 in your workbook.
+        </p>
+      `;
+      out.style.display = 'block';
+    }
+    // 3. Multi-Currency & EU VAT Switcher
+    const currencies = {
+      EUR: { symbol: '€', orig: '97', sale: '37', net: '€30,33', vat: '€6,67 (22%)', total: '€37,00', taxDesc: '✦ <strong>IVA / VAT inclusa</strong> (22% per residenti italiani ed europei) · Nessun costo a sorpresa', btnText: '✦ Scarica Ora / Get Instant Access — €37' },
+      USD: { symbol: '$', orig: '97', sale: '37', net: '$37.00', vat: '$0.00 (Exempt)', total: '$37.00', taxDesc: '✦ <strong>USD</strong> · US / Non-EU export (EU VAT exempt) · Local sales tax calculated at checkout', btnText: '✦ Get Instant Access Now — $37' },
+      GBP: { symbol: '£', orig: '85', sale: '32', net: '£26.67', vat: '£5.33 (20%)', total: '£32.00', taxDesc: '✦ <strong>UK VAT included</strong> (20%) · Instant access on phone & tablet', btnText: '✦ Get Instant Access Now — £32' }
+    };
+
+    function setCurrency(cur) {
+      const c = currencies[cur];
+      if (!c) return;
+
+      document.getElementById('display-price').innerHTML = `<s>${c.symbol}${c.orig}</s> ${c.symbol}${c.sale}`;
+      document.getElementById('display-tax-desc').innerHTML = c.taxDesc;
+      document.getElementById('tax-net').textContent = c.net;
+      document.getElementById('tax-vat').textContent = c.vat;
+      document.getElementById('tax-total').textContent = c.total;
+      document.getElementById('btn-checkout').textContent = c.btnText;
+
+      document.querySelectorAll('.currency-btn').forEach(b => {
+        b.style.background = 'rgba(255,255,255,0.08)';
+        b.style.color = '#cbd5e1';
+        b.style.border = '1px solid rgba(255,255,255,0.15)';
+      });
+      const activeBtn = document.getElementById('btn-' + cur.toLowerCase());
+      if (activeBtn) {
+        activeBtn.style.background = 'var(--gold-gradient)';
+        activeBtn.style.color = '#07090e';
+        activeBtn.style.border = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
+
