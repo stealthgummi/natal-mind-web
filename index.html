@@ -707,43 +707,46 @@
         </video>
       </div>
 
-      <!-- Reel Content & Hook -->
+      <!-- Reel Content & Her Authentic Story -->
       <div class="post-content">
-        <div class="reel-badge">🔥 LATEST TRANSMISSION · INSTAGRAM REEL</div>
+        <div class="reel-badge">✦ THE PRACTITIONER'S JOURNEY · SHAKTINOELLE</div>
         
-        <h2 class="post-title" id="post-title">
-          11/11 Portal & Scorpio New Moon Manifestation Guide
+        <h2 class="post-title" style="font-family: var(--font-serif); font-size: 1.85rem; color: #fff; line-height: 1.25; margin-bottom: 8px;">
+          From Dysregulated Survival to Regulated Self-Authorship
         </h2>
         
-        <div class="post-meta" id="post-meta">
-          <span>📅 Posted November 9, 2026</span>
-          <span>✦ @shaktinoelle</span>
+        <div class="post-meta" style="margin-bottom: 16px;">
+          <span>✦ 100K+ Conscious Women</span>
+          <span>·</span>
+          <a href="https://www.instagram.com/shaktinoelle/" target="_blank" style="color: var(--gold-light); text-decoration: none; font-weight: 600;">
+            @shaktinoelle on Instagram ↗
+          </a>
         </div>
 
-        <p class="post-hook" id="post-hook">
-          “If you're seeing this on or before November 11th, you are so lucky 'cause we are entering the 11/11 Portal — the most powerful day for manifestation.”
+        <p class="post-hook" style="font-size: 1.15rem; color: var(--gold-light); font-family: var(--font-reading); font-style: italic; margin-bottom: 16px; line-height: 1.5;">
+          “I learned to read the room before I could even read a book.”
         </p>
 
-        <p class="post-summary" id="post-summary">
-          We just emerged straight out of the Scorpio New Moon on November 9th. This is the sacred symbolic cosmic moment to release old survival patterns and plant deep, unshakeable intentions for your highest self.
+        <p class="post-summary" style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 16px;">
+          Like so many hyper-functioning, highly sensitive women, Noelle spent her early life running on chronic sympathetic exhaustion—trapped in fawn adaptations, room-scanning, and suppressing her own needs to keep the peace. 
+        </p>
+        <p class="post-summary" style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 18px;">
+          At age 30, following an acute relational rupture and hometown relocation, she watched her projected life plan dissolve overnight. Refusing passive collapse, she turned her personal grief into empirical, living data—making the decision to rebuild her identity <strong>on purpose with a plan, not by accident.</strong>
         </p>
 
-        <div class="post-steps">
-          <strong>The 3-Step 11/11 Portal Practice:</strong>
-          <ol>
-            <li><strong>Write 11 Things:</strong> Specific desires and embodiments you are calling into your reality for 2027.</li>
-            <li><strong>Describe Your Dream Day:</strong> Write every detail in the present tense as if it is already your truth.</li>
-            <li><strong>Somatic Visualization:</strong> Close your eyes, feel the freedom, the abundance, and anchor it into your nervous system.</li>
-          </ol>
+        <div class="post-steps" style="background: rgba(14, 19, 34, 0.85); border-left: 3px solid var(--gold-primary); padding: 16px 20px; border-radius: 8px; margin-bottom: 20px;">
+          <p style="font-family: var(--font-reading); font-style: italic; font-size: 1.05rem; color: #f8fafc; line-height: 1.6; margin-bottom: 8px;">
+            “You’re not having a mental breakdown. You’re having an emotional breakdown... You cannot think your way out of problems in a dysregulated ecosystem. You're not here to become smaller. You're here to become undeniable.”
+          </p>
+          <span style="font-size: 0.78rem; font-weight: 700; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 0.08em;">
+            — ShaktiNoelle · Somatic & Identity Reconstruction Strategist
+          </span>
         </div>
 
-        <div class="comment-quantum-box">
-          <div class="icon">✨</div>
-          <div>
-            <h4>Did you comment "QUANTUM" on Noelle's Instagram?</h4>
-            <p>You don't have to wait for a DM. Download our featured masterwork <strong>The Natal Mind</strong>, or access Noelle's individual guides and sessions below.</p>
-          </div>
-        </div>
+        <!-- Instagram Community Link Button -->
+        <a href="https://www.instagram.com/shaktinoelle/" target="_blank" class="btn-secondary" style="width: 100%; justify-content: center; font-size: 0.88rem; padding: 12px; margin-bottom: 16px; text-decoration: none; border-color: rgba(197, 160, 89, 0.4); display: flex; align-items: center; gap: 8px;">
+          <span>📸</span> Join 100K+ Women on Instagram (@shaktinoelle) ↗
+        </a>
 
         <!-- Main Button: The Natal Mind Front & Center -->
         <a href="https://buy.stripe.com/5kQaEYcQLbM6epH1lr7ss0Q" class="btn-primary" style="width: 100%; justify-content: center; font-size: 1.15rem; padding: 18px; margin-top: 18px; text-decoration: none;">
@@ -1034,28 +1037,22 @@
 
   <!-- Dynamic Post Loader & Demo Script -->
   <script>
-    // 1. Dynamic Latest Post Sync
+    // 1. Dynamic Latest Video Sync (Preserves Evergreen Bio & Story)
     async function loadLatestPost() {
       try {
         const res = await fetch('data/latest_post.json?t=' + Date.now());
         if (res.ok) {
           const data = await res.json();
-          if (data.title) document.getElementById('post-title').textContent = data.title;
-          if (data.hook) document.getElementById('post-hook').textContent = '“' + data.hook + '”';
-          if (data.summary) document.getElementById('post-summary').textContent = data.summary;
-          if (data.display_date) {
-            document.getElementById('post-meta').innerHTML = `<span>📅 Posted ${data.display_date}</span><span>✦ ${data.author ? data.author.handle : '@shaktinoelle'}</span>`;
-          }
           if (data.video_url) {
             const v = document.getElementById('latest-video');
-            if (v.src !== data.video_url) {
+            if (v && v.querySelector('source') && v.querySelector('source').src !== data.video_url) {
               v.querySelector('source').src = data.video_url;
               v.load();
             }
           }
         }
       } catch (err) {
-        console.log('Using static default reel content:', err);
+        console.log('Video sync status:', err);
       }
     }
     loadLatestPost();
