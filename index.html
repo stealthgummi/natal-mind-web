@@ -912,9 +912,10 @@
   </section>
 
   <!-- ========================================= -->
-  <!-- LIVE CHART ENGINE DEMO                    -->
+  <!-- LIVE CHART ENGINE & CALCULATOR            -->
   <!-- ========================================= -->
-  <section class="chart-demo-section" id="chart-demo">
+  <section class="chart-demo-section" id="chart-calculator" style="scroll-margin-top: 40px;">
+    <div id="chart-demo" style="position: relative; top: -40px;"></div>
     <div class="chart-box">
       <div class="badge" style="margin-bottom: 12px;">Live Birth Chart Engine Preview</div>
       <h3>Calculate Your Big Three Instantly</h3>
@@ -1206,6 +1207,17 @@
         activeBtn.style.border = 'none';
       }
     }
+
+    // 4. Smooth Auto-Scroll for Companion Deep Links
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash;
+      if (hash === '#chart-calculator' || hash === '#chart-demo') {
+        setTimeout(() => {
+          const el = document.getElementById('chart-calculator');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    });
   </script>
 </body>
 </html>
