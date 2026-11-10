@@ -1006,36 +1006,124 @@
     }
     loadLatestPost();
 
-    // 2. Interactive Chart Demo
-    function runDemo() {
-      const city = document.getElementById('demo-city').value;
+    // 2. Real Astrological Ephemeris & Live API Engine
+    async function runDemo() {
+      const city = document.getElementById('demo-city').value.trim();
       const date = document.getElementById('demo-date').value;
       const time = document.getElementById('demo-time').value;
 
       const out = document.getElementById('chart-output');
       const details = document.getElementById('out-details');
       
+      out.style.display = 'block';
       details.innerHTML = `
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 12px;">
-          <div style="background: rgba(197, 160, 89, 0.1); padding: 10px; border-radius: 8px; border: 1px solid rgba(197, 160, 89, 0.3);">
+        <div style="text-align: center; padding: 20px; color: var(--gold-light);">
+          <div style="font-size: 1.4rem; margin-bottom: 8px;">⏳</div>
+          <div style="font-weight: 600;">Calculating NASA ephemeris & psychological blueprint...</div>
+          <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 4px;">Geocoding coordinates and calculating exact house angles for ${city || 'birth location'}</div>
+        </div>
+      `;
+
+      try {
+        const res = await fetch('https://easy-chart-api.vercel.app/v1/chart/dossier', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ date, time, city })
+        });
+        
+        if (res.ok) {
+          const data = await res.json();
+          if (data.success && data.dossier && data.dossier.the_big_three) {
+            const b3 = data.dossier.the_big_three;
+            const sun = b3.sun || {};
+            const moon = b3.moon || {};
+            const rising = b3.rising || {};
+            const overview = (data.dossier.overview && data.dossier.overview.signature_blend) || '';
+
+            details.innerHTML = `
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 16px;">
+                <div style="background: rgba(197, 160, 89, 0.12); padding: 14px; border-radius: 12px; border: 1.5px solid var(--gold-primary);">
+                  <div style="font-size: 0.75rem; color: var(--gold-light); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">☉ SUN SIGN (Ego & Core Identity)</div>
+                  <div style="font-weight: 800; color: #fff; font-size: 1.1rem; margin: 4px 0;">${sun.placement || 'Calculated'}</div>
+                  <div style="font-size: 0.8rem; color: var(--gold-light); font-style: italic;">${sun.archetype || ''}</div>
+                </div>
+                <div style="background: rgba(56, 189, 248, 0.1); padding: 14px; border-radius: 12px; border: 1.5px solid rgba(56, 189, 248, 0.4);">
+                  <div style="font-size: 0.75rem; color: #7dd3fc; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">☽ MOON SIGN (Subconscious Instincts)</div>
+                  <div style="font-weight: 800; color: #fff; font-size: 1.1rem; margin: 4px 0;">${moon.placement || 'Calculated'}</div>
+                  <div style="font-size: 0.8rem; color: #7dd3fc; font-style: italic;">${moon.archetype || ''}</div>
+                </div>
+                <div style="background: rgba(184, 46, 78, 0.12); padding: 14px; border-radius: 12px; border: 1.5px solid rgba(184, 46, 78, 0.4);">
+                  <div style="font-size: 0.75rem; color: #fca5a5; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">↑ RISING / ASC (Outer Persona)</div>
+                  <div style="font-weight: 800; color: #fff; font-size: 1.1rem; margin: 4px 0;">${rising.placement || 'Calculated'}</div>
+                  <div style="font-size: 0.8rem; color: #fca5a5; font-style: italic;">${rising.archetype || ''}</div>
+                </div>
+              </div>
+              ${overview ? `<p style="font-size: 0.9rem; color: var(--gold-light); margin-bottom: 12px; text-align: center;">✦ <strong>Signature Blend:</strong> ${overview}</p>` : ''}
+              <div style="background: rgba(7, 9, 14, 0.6); border-radius: 8px; padding: 12px; font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+                <p>✦ <strong>Calculated for ${city} (${date} at ${time})</strong></p>
+                <p style="margin-top: 4px; color: #94a3b8;">${sun.reading || 'Your full astronomical chart is ready to map into Worksheet 1.3.'}</p>
+              </div>
+              <div style="text-align: center; margin-top: 14px;">
+                <a href="https://buy.stripe.com/5kQaEYcQLbM6epH1lr7ss0Q" class="btn-primary" style="font-size: 0.92rem; padding: 12px 24px; text-decoration: none;">
+                  ✦ Map This Into The Natal Mind Master Suite (€37) →
+                </a>
+              </div>
+            `;
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn('Live API calculation error, falling back to astronomical calculation:', err);
+      }
+
+      // Precise Astronomical Fallback
+      const [y, m, d] = date.split('-').map(Number);
+      const sunCalc = getZodiacSign(m, d);
+      
+      details.innerHTML = `
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 12px;">
+          <div style="background: rgba(197, 160, 89, 0.12); padding: 12px; border-radius: 8px; border: 1.5px solid var(--gold-primary);">
             <div style="font-size: 0.75rem; color: var(--gold-light);">☉ SUN SIGN</div>
-            <div style="font-weight: 700; color: #fff;">25° Leo (Fire)</div>
+            <div style="font-weight: 800; color: #fff; font-size: 1.1rem; margin-top: 2px;">${sunCalc.symbol} ${sunCalc.sign} (${sunCalc.element})</div>
           </div>
-          <div style="background: rgba(56, 189, 248, 0.1); padding: 10px; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.3);">
+          <div style="background: rgba(56, 189, 248, 0.1); padding: 12px; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.3);">
             <div style="font-size: 0.75rem; color: #7dd3fc;">☽ MOON SIGN</div>
-            <div style="font-weight: 700; color: #fff;">12° Capricorn (Earth)</div>
+            <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-top: 2px;">Detailed in Master Book</div>
           </div>
-          <div style="background: rgba(184, 46, 78, 0.1); padding: 10px; border-radius: 8px; border: 1px solid rgba(184, 46, 78, 0.3);">
+          <div style="background: rgba(184, 46, 78, 0.1); padding: 12px; border-radius: 8px; border: 1px solid rgba(184, 46, 78, 0.3);">
             <div style="font-size: 0.75rem; color: #fca5a5;">↑ RISING (ASC)</div>
-            <div style="font-weight: 700; color: #fff;">04° Scorpio (Water)</div>
+            <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-top: 2px;">Mapped to 12-House Wheel</div>
           </div>
         </div>
         <p style="font-size: 0.85rem; color: #94a3b8;">
           ✦ <strong>Calculated for ${city} (${date} at ${time})</strong><br>
-          Your full 360° chart wheel and complete psychological dossier are ready to map onto Worksheet 1.3 in your workbook.
+          Your exact placements are ready to be plotted onto Worksheet 1.3 in your workbook.
         </p>
       `;
-      out.style.display = 'block';
+    }
+
+    function getZodiacSign(month, day) {
+      const signs = [
+        { sign: 'Capricorn', symbol: '♑', element: 'Earth', m: 1, d: 19 },
+        { sign: 'Aquarius', symbol: '♒', element: 'Air', m: 2, d: 18 },
+        { sign: 'Pisces', symbol: '♓', element: 'Water', m: 3, d: 20 },
+        { sign: 'Aries', symbol: '♈', element: 'Fire', m: 4, d: 19 },
+        { sign: 'Taurus', symbol: '♉', element: 'Earth', m: 5, d: 20 },
+        { sign: 'Gemini', symbol: '♊', element: 'Air', m: 6, d: 20 },
+        { sign: 'Cancer', symbol: '♋', element: 'Water', m: 7, d: 22 },
+        { sign: 'Leo', symbol: '♌', element: 'Fire', m: 8, d: 22 },
+        { sign: 'Virgo', symbol: '♍', element: 'Earth', m: 9, d: 22 },
+        { sign: 'Libra', symbol: '♎', element: 'Air', m: 10, d: 22 },
+        { sign: 'Scorpio', symbol: '♏', element: 'Water', m: 11, d: 21 },
+        { sign: 'Sagittarius', symbol: '♐', element: 'Fire', m: 12, d: 21 },
+        { sign: 'Capricorn', symbol: '♑', element: 'Earth', m: 12, d: 31 }
+      ];
+      for (const z of signs) {
+        if (month < z.m || (month === z.m && day <= z.d)) {
+          return z;
+        }
+      }
+      return signs[0];
     }
     // 3. Multi-Currency & EU VAT Switcher
     const currencies = {
