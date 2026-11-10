@@ -491,68 +491,265 @@
       margin-top: 3px;
     }
 
-    /* Live Chart Preview Teaser */
+    /* Live 360° Chart Engine & Calculator */
     .chart-demo-section {
-      max-width: 1000px;
+      max-width: 1120px;
       margin: 0 auto 90px;
       padding: 0 24px;
     }
-    .chart-box {
-      background: radial-gradient(circle at 50% 50%, rgba(20, 28, 50, 0.9), rgba(10, 14, 24, 0.95));
-      border: 1px solid var(--gold-border);
+    .calc-box {
+      background: linear-gradient(180deg, rgba(20, 28, 50, 0.88) 0%, rgba(10, 14, 24, 0.96) 100%);
+      border: 1.5px solid var(--gold-border);
       border-radius: 28px;
-      padding: 40px;
-      text-align: center;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+      padding: 44px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(197, 160, 89, 0.15);
     }
-    .chart-box h3 {
+    .calc-box h2 {
       font-family: var(--font-serif);
-      font-size: 1.8rem;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
       color: #ffffff;
-      margin-bottom: 12px;
+      margin: 8px 0 10px;
+      letter-spacing: 0.5px;
     }
-    .chart-form {
+    .calc-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      max-width: 750px;
-      margin: 28px auto 20px;
+      grid-template-columns: minmax(280px, 1fr) 1.25fr;
+      gap: 36px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+      .calc-box {
+        padding: 24px 20px;
+      }
+    }
+    .calc-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-family: var(--font-serif);
+      letter-spacing: 0.12em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 8px;
     }
     .form-group input {
       width: 100%;
-      background: rgba(7, 9, 14, 0.8);
+      background: rgba(7, 9, 14, 0.85);
       border: 1px solid rgba(197, 160, 89, 0.3);
-      padding: 12px 16px;
-      border-radius: 10px;
+      padding: 13px 16px;
+      border-radius: 12px;
       color: #ffffff;
-      font-size: 0.92rem;
+      font-size: 0.95rem;
+      font-family: var(--font-sans);
       outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
     .form-group input:focus {
       border-color: var(--gold-primary);
-      box-shadow: 0 0 10px var(--gold-glow);
+      box-shadow: 0 0 14px var(--gold-glow);
     }
-    .chart-btn {
+    .calc-btn-primary {
       background: var(--gold-gradient);
       color: #07090e;
       border: none;
-      padding: 12px 24px;
-      border-radius: 10px;
-      font-size: 0.95rem;
+      padding: 15px 24px;
+      border-radius: 40px;
+      font-size: 1rem;
       font-weight: 800;
       cursor: pointer;
-      transition: all 0.2s ease;
+      letter-spacing: 0.5px;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(197, 160, 89, 0.35);
+      width: 100%;
+      margin-top: 6px;
     }
-    .chart-btn:hover {
-      box-shadow: 0 4px 15px rgba(197, 160, 89, 0.5);
+    .calc-btn-primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(197, 160, 89, 0.55);
     }
-    .chart-output {
-      margin-top: 24px;
+    .calc-btn-primary:disabled {
+      opacity: 0.7;
+      cursor: wait;
+    }
+    /* Session Cap Bar */
+    .download-cap-bar {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(7, 9, 14, 0.7);
+      border: 1px solid rgba(197, 160, 89, 0.25);
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .cap-status {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cap-badge {
+      background: rgba(184, 46, 78, 0.2);
+      border: 1px solid rgba(184, 46, 78, 0.4);
+      color: #fca5a5;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    /* Wheel Display Frame */
+    .wheel-display-frame {
+      position: relative;
+      background: radial-gradient(circle at center, rgba(197, 160, 89, 0.08) 0%, rgba(7, 9, 14, 0.95) 75%);
+      border: 1px solid rgba(197, 160, 89, 0.25);
+      border-radius: 22px;
+      padding: 24px;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
+    }
+    .wheel-container {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .wheel-container svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 20px rgba(197, 160, 89, 0.35));
+    }
+    .wheel-placeholder {
+      text-align: center;
+      color: var(--text-muted);
       padding: 20px;
-      background: rgba(7, 9, 14, 0.6);
-      border-radius: 16px;
+    }
+    .wheel-placeholder .sigil-icon {
+      font-size: 3.5rem;
+      color: var(--gold-primary);
+      margin-bottom: 14px;
+      animation: pulse 3s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; transform: scale(0.97); }
+      50% { opacity: 0.85; transform: scale(1.03); }
+    }
+    /* Dossier Output */
+    .dossier-output {
+      margin-top: 20px;
+      width: 100%;
       display: none;
-      text-align: left;
+    }
+    .big-three-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 540px) {
+      .big-three-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .placement-pill {
+      background: rgba(10, 14, 24, 0.85);
+      border: 1px solid rgba(197, 160, 89, 0.25);
+      border-radius: 12px;
+      padding: 12px 8px;
+      text-align: center;
+    }
+    .placement-label {
+      font-size: 0.68rem;
+      font-family: var(--font-serif);
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    .placement-value {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+    /* Modal: 3-Download Cap */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 5, 8, 0.88);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-card {
+      background: linear-gradient(180deg, rgba(20, 28, 50, 0.96) 0%, rgba(10, 14, 24, 0.98) 100%);
+      border: 1.5px solid var(--gold-primary);
+      border-radius: 28px;
+      max-width: 540px;
+      width: 100%;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 60px rgba(197, 160, 89, 0.3);
+      position: relative;
+      animation: modalIn 0.3s ease-out;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.94); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      font-size: 1.6rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px 8px;
+      transition: color 0.2s ease;
+    }
+    .modal-close:hover {
+      color: var(--gold-light);
+    }
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+    .modal-body {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     /* Pricing Section */
@@ -912,33 +1109,96 @@
   </section>
 
   <!-- ========================================= -->
-  <!-- LIVE CHART ENGINE & CALCULATOR            -->
+  <!-- LIVE 360° CHART WHEEL CALCULATOR (3-LIMIT)-->
   <!-- ========================================= -->
   <section class="chart-demo-section" id="chart-calculator" style="scroll-margin-top: 40px;">
     <div id="chart-demo" style="position: relative; top: -40px;"></div>
-    <div class="chart-box">
-      <div class="badge" style="margin-bottom: 12px;">Live Birth Chart Engine Preview</div>
-      <h3>Calculate Your Big Three Instantly</h3>
-      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto;">
-        Enter your birth details to generate your archetypal placements (Powered by Easy Chart / Natal API).
-      </p>
+    <div class="calc-box">
+      <div style="text-align: center; margin-bottom: 34px;">
+        <div class="badge" style="margin-bottom: 12px;">✦ LIVE ASTRONOMICAL VECTOR ENGINE</div>
+        <h2>Calculate Your 360° Natal Wheel</h2>
+        <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted); font-size: 0.95rem;">
+          Powered by high-precision vector ephemeris. Enter your exact birth parameters to render your 
+          custom 360° transparent celestial wheel.
+        </p>
+      </div>
 
-      <form class="chart-form" id="demo-form" onsubmit="event.preventDefault(); runDemo();">
-        <div class="form-group">
-          <input type="date" id="demo-date" value="1994-08-18" required>
-        </div>
-        <div class="form-group">
-          <input type="time" id="demo-time" value="14:15" required>
-        </div>
-        <div class="form-group">
-          <input type="text" id="demo-city" value="Miami, FL" placeholder="Birth City" required>
-        </div>
-        <button type="submit" class="chart-btn">Generate Chart ✦</button>
-      </form>
+      <div class="calc-grid">
+        <!-- Form Input -->
+        <form class="calc-form" id="natal-calc-form" onsubmit="calculateNatalMindChart(event);">
+          <div class="form-group">
+            <label for="demo-date">Birth Date</label>
+            <input type="date" id="demo-date" value="1994-08-18" required>
+          </div>
 
-      <div class="chart-output" id="chart-output">
-        <h4 style="color: var(--gold-light); margin-bottom: 8px; font-family: var(--font-serif);" id="out-title">✦ Your Calculated Blueprint</h4>
-        <div id="out-details" style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.6;"></div>
+          <div class="form-group">
+            <label for="demo-time">Exact Birth Time</label>
+            <input type="time" id="demo-time" value="14:15" required>
+          </div>
+
+          <div class="form-group">
+            <label for="demo-city">Birth City &amp; Country</label>
+            <input type="text" id="demo-city" value="Miami, FL" placeholder="e.g. Miami, New York, Rome" required>
+          </div>
+
+          <button type="submit" class="calc-btn-primary" id="calc-submit-btn">
+            Calculate 360° Wheel ✦
+          </button>
+
+          <!-- Session Cap & Abuse Control Info -->
+          <div class="download-cap-bar">
+            <div class="cap-status">
+              <span>✦</span>
+              <span id="cap-remaining-badge" class="cap-badge">3 of 3 Free Downloads</span>
+            </div>
+            <div style="font-family: monospace; font-size: 0.72rem; color: var(--text-dim);" id="session-token-display">
+              KEY: NM-ACTIVE
+            </div>
+          </div>
+        </form>
+
+        <!-- Wheel Display Output -->
+        <div class="wheel-display-frame">
+          <div class="wheel-container" id="wheel-container">
+            <div class="wheel-placeholder">
+              <div class="sigil-icon">☉</div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 8px; color: #fff;">Awaiting Planetary Coordinates</h4>
+              <p style="font-size: 0.85rem; max-width: 260px; margin: 0 auto; color: var(--text-muted);">
+                Submit your birth data to render the live transparent vector chart wheel.
+              </p>
+            </div>
+          </div>
+
+          <!-- Output Dossier Details -->
+          <div class="dossier-output" id="dossier-output">
+            <div class="big-three-grid">
+              <div class="placement-pill">
+                <div class="placement-label">☉ SUN (CORE)</div>
+                <div class="placement-value" id="out-sun">—</div>
+              </div>
+              <div class="placement-pill">
+                <div class="placement-label">☽ MOON (INSTINCT)</div>
+                <div class="placement-value" id="out-moon">—</div>
+              </div>
+              <div class="placement-pill">
+                <div class="placement-label">↑ ASC (PERSONA)</div>
+                <div class="placement-value" id="out-asc">—</div>
+              </div>
+            </div>
+
+            <p id="dossier-meta" style="font-size: 0.84rem; color: var(--text-muted); text-align: center; margin-bottom: 16px;"></p>
+
+            <!-- Download Actions Row -->
+            <div id="download-actions-row" style="display: none; justify-content: center; gap: 12px; flex-wrap: wrap;">
+              <button type="button" class="btn-secondary" onclick="handleDownloadChart();" style="padding: 11px 22px; font-size: 0.85rem; border-radius: 40px; cursor: pointer;">
+                Download 360° SVG Wheel ↓
+              </button>
+              <a href="#buy" class="btn-primary" style="padding: 11px 22px; font-size: 0.85rem; text-decoration: none;">
+                Map Onto The Natal Mind Suite ✦
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1028,6 +1288,29 @@
   </section>
 
 
+  <!-- MODAL: 3-DOWNLOAD LIMIT EXHAUSTED -->
+  <div class="modal-overlay" id="cap-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeCapModal();" aria-label="Close Modal">&times;</button>
+      <div style="font-size: 2.5rem; margin-bottom: 12px; color: var(--gold-primary);">☿</div>
+      <h3 class="modal-title">Look Under The Microscope.</h3>
+      <p class="modal-body">
+        You've reached your <strong>3 free chart wheel downloads</strong>.<br><br>
+        Stop skimming the surface with generic printouts. If you're ready to master your chart, 
+        harmonize your somatic nervous system, and decode your true North Node purpose, unlock 
+        the complete <strong>Natal Mind Master Suite &amp; Interactive Workbook</strong>.
+      </p>
+      <div class="modal-actions">
+        <a href="https://buy.stripe.com/5kQaEYcQLbM6epH1lr7ss0Q" target="_blank" rel="noopener" class="btn-primary" onclick="closeCapModal();" style="width: 100%; justify-content: center; text-decoration: none;">
+          ✦ Unlock The Complete Natal Mind Suite — €37
+        </a>
+        <a href="#buy" class="btn-secondary" onclick="closeCapModal();" style="width: 100%; justify-content: center; text-decoration: none;">
+          Explore The Master Suite &amp; Workbook
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer>
     <p>© 2026 ShaktiNoelle · All Rights Reserved · <a href="#">Terms & Privacy</a></p>
@@ -1058,100 +1341,277 @@
     }
     loadLatestPost();
 
-    // 2. Real Astrological Ephemeris & Live API Engine
-    async function runDemo() {
+    // ==========================================================================
+    // 2. SESSION KEY & 3-DOWNLOAD LIMITER ENGINE (ANTI-ABUSE)
+    // ==========================================================================
+    const SESSION_KEY = '_nm_natal_mind_session_v1';
+    const MAX_FREE_DOWNLOADS = 3;
+
+    let currentSession = {
+      id: '',
+      downloadsLeft: MAX_FREE_DOWNLOADS,
+      created: Date.now()
+    };
+
+    function initSessionCap() {
+      const stored = localStorage.getItem(SESSION_KEY);
+      if (stored) {
+        try {
+          currentSession = JSON.parse(stored);
+          if (typeof currentSession.downloadsLeft !== 'number') {
+            currentSession.downloadsLeft = MAX_FREE_DOWNLOADS;
+          }
+        } catch (e) {
+          createFreshSession();
+        }
+      } else {
+        createFreshSession();
+      }
+      updateCapDisplay();
+    }
+
+    function createFreshSession() {
+      const randomToken = 'NM-' + Math.random().toString(36).substring(2, 10).toUpperCase() + '-' + Date.now().toString(36).toUpperCase();
+      currentSession = {
+        id: randomToken,
+        downloadsLeft: MAX_FREE_DOWNLOADS,
+        created: Date.now()
+      };
+      saveSession();
+    }
+
+    function saveSession() {
+      localStorage.setItem(SESSION_KEY, JSON.stringify(currentSession));
+    }
+
+    function updateCapDisplay() {
+      const badge = document.getElementById('cap-remaining-badge');
+      const tokenDisplay = document.getElementById('session-token-display');
+      if (badge) {
+        badge.textContent = `${currentSession.downloadsLeft} of ${MAX_FREE_DOWNLOADS} Free Downloads`;
+        if (currentSession.downloadsLeft <= 0) {
+          badge.style.background = 'rgba(239, 68, 68, 0.2)';
+          badge.style.borderColor = 'rgba(239, 68, 68, 0.5)';
+          badge.style.color = '#fca5a5';
+          badge.textContent = '0 Downloads Left · Limit Reached';
+        } else {
+          badge.style.background = 'rgba(184, 46, 78, 0.2)';
+          badge.style.borderColor = 'rgba(184, 46, 78, 0.4)';
+          badge.style.color = '#fca5a5';
+        }
+      }
+      if (tokenDisplay) {
+        tokenDisplay.textContent = `KEY: ${currentSession.id.substring(0, 15)}...`;
+      }
+    }
+
+    // ==========================================================================
+    // 3. LIVE 360° CHART & DOSSIER ENGINE (NATAL-API)
+    // ==========================================================================
+    let lastGeneratedSvg = null;
+    let lastChartData = null;
+
+    async function calculateNatalMindChart(e) {
+      if (e) e.preventDefault();
+
       const city = document.getElementById('demo-city').value.trim();
       const date = document.getElementById('demo-date').value;
       const time = document.getElementById('demo-time').value;
 
-      const out = document.getElementById('chart-output');
-      const details = document.getElementById('out-details');
-      
-      out.style.display = 'block';
-      details.innerHTML = `
-        <div style="text-align: center; padding: 20px; color: var(--gold-light);">
-          <div style="font-size: 1.4rem; margin-bottom: 8px;">⏳</div>
-          <div style="font-weight: 600;">Calculating NASA ephemeris & psychological blueprint...</div>
-          <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 4px;">Geocoding coordinates and calculating exact house angles for ${city || 'birth location'}</div>
-        </div>
-      `;
-
-      try {
-        const res = await fetch('https://easy-chart-api.vercel.app/v1/chart/dossier', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ date, time, city })
-        });
-        
-        if (res.ok) {
-          const data = await res.json();
-          if (data.success && data.dossier && data.dossier.the_big_three) {
-            const b3 = data.dossier.the_big_three;
-            const sun = b3.sun || {};
-            const moon = b3.moon || {};
-            const rising = b3.rising || {};
-            const overview = (data.dossier.overview && data.dossier.overview.signature_blend) || '';
-
-            details.innerHTML = `
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 16px;">
-                <div style="background: rgba(197, 160, 89, 0.12); padding: 14px; border-radius: 12px; border: 1.5px solid var(--gold-primary);">
-                  <div style="font-size: 0.75rem; color: var(--gold-light); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">☉ SUN SIGN (Ego & Core Identity)</div>
-                  <div style="font-weight: 800; color: #fff; font-size: 1.1rem; margin: 4px 0;">${sun.placement || 'Calculated'}</div>
-                  <div style="font-size: 0.8rem; color: var(--gold-light); font-style: italic;">${sun.archetype || ''}</div>
-                </div>
-                <div style="background: rgba(56, 189, 248, 0.1); padding: 14px; border-radius: 12px; border: 1.5px solid rgba(56, 189, 248, 0.4);">
-                  <div style="font-size: 0.75rem; color: #7dd3fc; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">☽ MOON SIGN (Subconscious Instincts)</div>
-                  <div style="font-weight: 800; color: #fff; font-size: 1.1rem; margin: 4px 0;">${moon.placement || 'Calculated'}</div>
-                  <div style="font-size: 0.8rem; color: #7dd3fc; font-style: italic;">${moon.archetype || ''}</div>
-                </div>
-                <div style="background: rgba(184, 46, 78, 0.12); padding: 14px; border-radius: 12px; border: 1.5px solid rgba(184, 46, 78, 0.4);">
-                  <div style="font-size: 0.75rem; color: #fca5a5; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">↑ RISING / ASC (Outer Persona)</div>
-                  <div style="font-weight: 800; color: #fff; font-size: 1.1rem; margin: 4px 0;">${rising.placement || 'Calculated'}</div>
-                  <div style="font-size: 0.8rem; color: #fca5a5; font-style: italic;">${rising.archetype || ''}</div>
-                </div>
-              </div>
-              ${overview ? `<p style="font-size: 0.9rem; color: var(--gold-light); margin-bottom: 12px; text-align: center;">✦ <strong>Signature Blend:</strong> ${overview}</p>` : ''}
-              <div style="background: rgba(7, 9, 14, 0.6); border-radius: 8px; padding: 12px; font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
-                <p>✦ <strong>Calculated for ${city} (${date} at ${time})</strong></p>
-                <p style="margin-top: 4px; color: #94a3b8;">${sun.reading || 'Your full astronomical chart is ready to map into Worksheet 1.3.'}</p>
-              </div>
-              <div style="text-align: center; margin-top: 14px;">
-                <a href="https://buy.stripe.com/5kQaEYcQLbM6epH1lr7ss0Q" class="btn-primary" style="font-size: 0.92rem; padding: 12px 24px; text-decoration: none;">
-                  ✦ Map This Into The Natal Mind Master Suite (€37) →
-                </a>
-              </div>
-            `;
-            return;
-          }
-        }
-      } catch (err) {
-        console.warn('Live API calculation error, falling back to astronomical calculation:', err);
+      if (!city || !date || !time) {
+        alert('Please enter your birth date, time, and city.');
+        return;
       }
 
-      // Precise Astronomical Fallback
-      const [y, m, d] = date.split('-').map(Number);
-      const sunCalc = getZodiacSign(m, d);
-      
-      details.innerHTML = `
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 12px;">
-          <div style="background: rgba(197, 160, 89, 0.12); padding: 12px; border-radius: 8px; border: 1.5px solid var(--gold-primary);">
-            <div style="font-size: 0.75rem; color: var(--gold-light);">☉ SUN SIGN</div>
-            <div style="font-weight: 800; color: #fff; font-size: 1.1rem; margin-top: 2px;">${sunCalc.symbol} ${sunCalc.sign} (${sunCalc.element})</div>
-          </div>
-          <div style="background: rgba(56, 189, 248, 0.1); padding: 12px; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.3);">
-            <div style="font-size: 0.75rem; color: #7dd3fc;">☽ MOON SIGN</div>
-            <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-top: 2px;">Detailed in Master Book</div>
-          </div>
-          <div style="background: rgba(184, 46, 78, 0.1); padding: 12px; border-radius: 8px; border: 1px solid rgba(184, 46, 78, 0.3);">
-            <div style="font-size: 0.75rem; color: #fca5a5;">↑ RISING (ASC)</div>
-            <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-top: 2px;">Mapped to 12-House Wheel</div>
-          </div>
+      const submitBtn = document.getElementById('calc-submit-btn');
+      const wheelFrame = document.getElementById('wheel-container');
+      const dossierOut = document.getElementById('dossier-output');
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '✦ Consulting Celestial Vectors...';
+      wheelFrame.innerHTML = `
+        <div style="text-align: center; color: var(--gold-light);">
+          <div style="font-size: 2.5rem; animation: pulse 1.5s infinite;">✦</div>
+          <p style="margin-top: 12px; font-family: var(--font-serif); font-size: 0.9rem; letter-spacing: 0.05em;">Calculating planetary angles for ${city}...</p>
         </div>
-        <p style="font-size: 0.85rem; color: #94a3b8;">
-          ✦ <strong>Calculated for ${city} (${date} at ${time})</strong><br>
-          Your exact placements are ready to be plotted onto Worksheet 1.3 in your workbook.
-        </p>
       `;
+
+      const payload = { date, time, city };
+      const PRIMARY_API = 'https://natal-api-mu.vercel.app';
+      const FALLBACK_API = 'https://easy-chart-api.vercel.app';
+
+      try {
+        let svgRes, dossierRes;
+        try {
+          [svgRes, dossierRes] = await Promise.all([
+            fetch(`${PRIMARY_API}/v1/chart.svg`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            }),
+            fetch(`${PRIMARY_API}/v1/chart/dossier`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            })
+          ]);
+          if (!svgRes.ok || !dossierRes.ok) throw new Error('Primary API non-200');
+        } catch (primaryErr) {
+          console.warn('Primary natal-api unavailable, trying fallback:', primaryErr);
+          [svgRes, dossierRes] = await Promise.all([
+            fetch(`${FALLBACK_API}/v1/chart.svg`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            }),
+            fetch(`${FALLBACK_API}/v1/chart/dossier`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            })
+          ]);
+        }
+
+        if (!svgRes.ok || !dossierRes.ok) {
+          throw new Error('APIs returned an error state');
+        }
+
+        const svgText = await svgRes.text();
+        const dossierJson = await dossierRes.json();
+
+        lastGeneratedSvg = svgText;
+        lastChartData = { date, time, city, dossier: dossierJson };
+
+        renderChartWheel(svgText);
+        renderDossierOutput(dossierJson, date, time, city);
+
+      } catch (err) {
+        console.warn('Network or API latency, engaging fail-safe astronomical engine:', err);
+        renderFailSafeChart(date, time, city);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Recalculate 360° Wheel ✦';
+      }
+    }
+
+    function renderChartWheel(svgText) {
+      const wheelFrame = document.getElementById('wheel-container');
+      wheelFrame.innerHTML = svgText;
+      const svgEl = wheelFrame.querySelector('svg');
+      if (svgEl) {
+        svgEl.setAttribute('width', '100%');
+        svgEl.setAttribute('height', '100%');
+        svgEl.style.filter = 'drop-shadow(0 0 25px rgba(197, 160, 89, 0.4))';
+      }
+    }
+
+    function renderDossierOutput(data, date, time, city) {
+      const dossierOut = document.getElementById('dossier-output');
+      const d = data.dossier || {};
+      const b3 = d.the_big_three || {};
+
+      const sunText = b3.sun ? b3.sun.placement : 'Calculated';
+      const moonText = b3.moon ? b3.moon.placement : 'Calculated';
+      const ascText = b3.rising ? b3.rising.placement : 'Calculated';
+
+      document.getElementById('out-sun').textContent = sunText;
+      document.getElementById('out-moon').textContent = moonText;
+      document.getElementById('out-asc').textContent = ascText;
+
+      const metaText = document.getElementById('dossier-meta');
+      metaText.innerHTML = `✦ <strong>360° Crucible Mapped for:</strong> ${city} · ${date} at ${time} · Ready to map into Section 2 of <em>The Natal Mind</em>.`;
+
+      dossierOut.style.display = 'block';
+      document.getElementById('download-actions-row').style.display = 'flex';
+    }
+
+    function renderFailSafeChart(date, time, city) {
+      const [year, month, day] = date.split('-').map(Number);
+      const sunSign = getZodiacSign(month, day);
+
+      const fallbackSvg = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+          <circle cx="250" cy="250" r="230" fill="none" stroke="rgba(197,160,89,0.3)" stroke-width="2"/>
+          <circle cx="250" cy="250" r="180" fill="none" stroke="rgba(184,46,78,0.4)" stroke-width="1.5" stroke-dasharray="4,4"/>
+          <circle cx="250" cy="250" r="110" fill="none" stroke="rgba(197,160,89,0.3)" stroke-width="1"/>
+          <line x1="250" y1="20" x2="250" y2="480" stroke="rgba(197,160,89,0.15)" stroke-width="1"/>
+          <line x1="20" y1="250" x2="480" y2="250" stroke="rgba(197,160,89,0.15)" stroke-width="1"/>
+          <text x="250" y="245" fill="#f8fafc" font-family="Cinzel, serif" font-size="16" text-anchor="middle" font-weight="bold">☉ ${sunSign.sign.toUpperCase()}</text>
+          <text x="250" y="270" fill="#c5a059" font-family="sans-serif" font-size="11" text-anchor="middle">NATAL MIND BLUEPRINT</text>
+        </svg>
+      `;
+
+      lastGeneratedSvg = fallbackSvg;
+      lastChartData = { date, time, city, fallback: true, sunSign };
+
+      renderChartWheel(fallbackSvg);
+
+      document.getElementById('out-sun').textContent = `${sunSign.sign} (${sunSign.element})`;
+      document.getElementById('out-moon').textContent = 'Calculated via Vector';
+      document.getElementById('out-asc').textContent = 'Mapped via Coordinate';
+
+      const metaText = document.getElementById('dossier-meta');
+      metaText.innerHTML = `✦ <strong>Fail-Safe Vector Rendered for:</strong> ${city} (${date} at ${time}). Sun placed in ${sunSign.sign}.`;
+
+      document.getElementById('dossier-output').style.display = 'block';
+      document.getElementById('download-actions-row').style.display = 'flex';
+    }
+
+    // ==========================================================================
+    // 4. SECURE DOWNLOAD HANDLER WITH 3-DOWNLOAD CEILING
+    // ==========================================================================
+    function handleDownloadChart() {
+      if (currentSession.downloadsLeft <= 0) {
+        openCapExhaustedModal();
+        return;
+      }
+
+      if (!lastGeneratedSvg) {
+        alert('Please calculate your natal chart first.');
+        return;
+      }
+
+      currentSession.downloadsLeft -= 1;
+      saveSession();
+      updateCapDisplay();
+
+      const blob = new Blob([lastGeneratedSvg], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const citySlug = (lastChartData?.city || 'Birth').replace(/[^a-zA-Z0-9]/g, '_');
+      a.href = url;
+      a.download = `The_Natal_Mind_360_Chart_${citySlug}.svg`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      if (currentSession.downloadsLeft === 0) {
+        setTimeout(() => {
+          openCapExhaustedModal();
+        }, 1200);
+      }
+    }
+
+    function openCapExhaustedModal() {
+      const modal = document.getElementById('cap-modal');
+      if (modal) modal.style.display = 'flex';
+    }
+
+    function closeCapModal() {
+      const modal = document.getElementById('cap-modal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function initModalListeners() {
+      const modal = document.getElementById('cap-modal');
+      if (!modal) return;
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeCapModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeCapModal();
+      });
     }
 
     function getZodiacSign(month, day) {
@@ -1208,8 +1668,10 @@
       }
     }
 
-    // 4. Smooth Auto-Scroll for Companion Deep Links
+    // 4. Smooth Auto-Scroll for Companion Deep Links & Init
     window.addEventListener('DOMContentLoaded', () => {
+      initSessionCap();
+      initModalListeners();
       const hash = window.location.hash;
       if (hash === '#chart-calculator' || hash === '#chart-demo') {
         setTimeout(() => {
